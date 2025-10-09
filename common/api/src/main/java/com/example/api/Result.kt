@@ -1,6 +1,6 @@
 package com.example.api
 
-import com.example.api.errors.Status as BaseError
+import com.example.api.events.Status as BaseError
 
 
 sealed interface Result<I: BaseError, out D> {

@@ -1,5 +1,7 @@
 package com.example.impl.models
 
+import com.example.api.Model
+import com.example.api.models.VideoWithChannel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -16,4 +18,30 @@ data class VideoWithChannelSerializable(
     val slug: String,
     val title: String,
     val video: String,
+): Model
+
+
+fun VideoWithChannelSerializable.toDomain() = VideoWithChannel(
+    browsing = browsing,
+    channel = channel.toDomain(),
+    datetime = datetime,
+    description = description,
+    id = id,
+    isPublished = isPublished,
+    photo = photo,
+    slug = slug,
+    title = title,
+    video = video,
+)
+fun VideoWithChannel.toSerializable() = VideoWithChannelSerializable(
+    browsing = browsing,
+    channel = channel.toSerializable(),
+    datetime = datetime,
+    description = description,
+    id = id,
+    isPublished = isPublished,
+    photo = photo,
+    slug = slug,
+    title = title,
+    video = video,
 )

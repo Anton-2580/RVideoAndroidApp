@@ -1,5 +1,8 @@
 package com.example.api.models
 
+import com.example.api.Model
+
+
 data class Video(
     val browsing: Int,
     val channel: Int,
@@ -11,4 +14,4 @@ data class Video(
     val slug: String,
     val title: String,
     val video: String,
-)
+): Model

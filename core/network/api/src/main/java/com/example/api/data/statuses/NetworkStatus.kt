@@ -1,6 +1,6 @@
 package com.example.api.data.statuses
 
-import com.example.api.errors.Status
+import com.example.api.events.Status
 import kotlin.reflect.KClass
 
 

@@ -63,9 +63,12 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(project(":features:home:api"))
+    implementation(project(":common:api"))
     implementation(project(":common:impl"))
     implementation(project(":common:ui"))
     implementation(project(":core:navigation:api"))
+    implementation(project(":core:network:api"))
+    implementation(project(":core:network:impl"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)

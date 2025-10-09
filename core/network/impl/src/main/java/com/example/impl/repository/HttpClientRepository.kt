@@ -8,6 +8,8 @@ import com.example.impl.data.get
 import com.example.impl.data.post
 import io.ktor.util.reflect.TypeInfo
 import kotlin.reflect.KClass
+import kotlin.reflect.KType
+import kotlin.reflect.javaType
 import io.ktor.client.HttpClient as KtorHttpClient
 
 
@@ -17,25 +19,45 @@ class HttpClientRepository(
     override suspend fun <Response : Any> get(
         route: String,
         queryParameters: Map<String, Any?>,
-        type: KClass<Response>,
+        kClass: KClass<Response>,
+        kType: KType
     ): Result<NetworkStatus, Response> =
-        httpClient.get(route, queryParameters, getType(type))
+        httpClient.get(
+            route,
+            queryParameters,
+            getType(kClass, kType)
+        )
 
     override suspend fun <Request : Any, Response : Any> post(
         route: String,
         body: Request,
-        type: KClass<Response>,
+        kClass: KClass<Response>,
+        kType: KType,
         bodyType: KClass<Request>,
+        bodyKType: KType
     ): Result<NetworkStatus, Response> =
-        httpClient.post(route, body, getType(type), getType(bodyType))
+        httpClient.post(
+            route,
+            body,
+            getType(kClass, kType),
+            getType(bodyType, bodyKType)
+        )
 
     override suspend fun <Response : Any> delete(
         route: String,
         queryParameters: Map<String, Any?>,
-        type: KClass<Response>,
+        kClass: KClass<Response>,
+        kType: KType
     ): Result<NetworkStatus, Response> =
-        httpClient.delete(route, queryParameters, getType(type))
+        httpClient.delete(
+            route,
+            queryParameters,
+            getType(kClass, kType)
+        )
 
-
-    private fun getType(type: KClass<*>) = TypeInfo(type, type.java)
+    @OptIn(ExperimentalStdlibApi::class)
+    private fun getType(
+        kClass: KClass<*>,
+        kType: KType,
+    ) = TypeInfo(kClass, kType.javaType, kType)
 }

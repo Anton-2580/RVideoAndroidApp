@@ -18,6 +18,8 @@ import com.example.ui.theme.Search
 fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
 ) {
+    viewModel.getVideos()
+
     Column {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,

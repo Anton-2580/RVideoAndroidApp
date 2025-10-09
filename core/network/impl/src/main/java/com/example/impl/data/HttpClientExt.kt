@@ -68,10 +68,9 @@ suspend inline fun <T> safeCall(
         return Result.Error(NetworkStatus.NoInternet)
     } catch (e: SerializationException) {
         return Result.Error(NetworkStatus.Serialization)
-    } /* catch (e: Exception) {
-        e.printStackTrace()
+    } catch (e: Exception) {
         return Result.Error(NetworkStatus.Unknown)
-    } */
+    }
 
     return responseToResult(response, type)
 }

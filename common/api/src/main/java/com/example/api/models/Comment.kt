@@ -1,5 +1,8 @@
 package com.example.api.models
 
+import com.example.api.Model
+
+
 data class Comment(
     val answer: Int,
     val author: Int,
@@ -9,4 +12,4 @@ data class Comment(
     val notify: Boolean,
     val text: String,
     val video: Int?,
-)
+): Model
