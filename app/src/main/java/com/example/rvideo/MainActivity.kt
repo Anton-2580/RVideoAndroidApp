@@ -4,22 +4,22 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
-import com.example.impl.utils.getNewPaddingValues
 import com.example.rvideo.navigation.NavigationRoot
-import com.example.ui.theme.RVideoTheme
+import common.ui.theme.RVideoTheme
 import dagger.hilt.android.AndroidEntryPoint
-
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        super.onCreate(savedInstanceState)
+
+        if (BuildConfig.DEBUG) {
+            Timber.Forest.plant(Timber.DebugTree())
+        }
 
         setContent {
             val navController = rememberNavController()
@@ -28,11 +28,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold { innerPadding ->
                     NavigationRoot(
                         navController = navController,
-                        modifier = Modifier
-                            .padding(getNewPaddingValues(
-                                innerPadding = innerPadding,
-                                horizontalPadding = 10.dp,
-                            ))
+                        padding = innerPadding,
                     )
                 }
             }
