@@ -19,8 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import common.api.events.BaseEvents
-import common.api.events.Status
+import common.api.domain.events.BaseEvents
+import common.api.domain.events.Status
 import common.impl.utils.getNewPaddingValues
 import common.impl.widgets.LoadedSelectItem
 import common.impl.widgets.LoadingVideoBlock
@@ -36,7 +36,7 @@ import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun HomeScreen(
-    padding: PaddingValues = PaddingValues.Zero,
+    padding: PaddingValues,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val videosEvents: MutableState<Status> = remember { mutableStateOf(BaseEvents.Loading) }

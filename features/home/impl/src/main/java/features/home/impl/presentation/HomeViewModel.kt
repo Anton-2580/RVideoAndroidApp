@@ -3,7 +3,7 @@ package features.home.impl.presentation
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
-import common.api.Result
+import common.api.domain.Result
 import core.network.api.data.HttpClient
 import core.network.api.data.site_api.ModelsApi
 import common.impl.BaseViewModel

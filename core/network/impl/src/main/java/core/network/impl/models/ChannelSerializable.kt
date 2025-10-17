@@ -1,7 +1,7 @@
 package core.network.impl.models
 
-import common.api.Model
-import common.api.models.Channel
+import common.api.domain.Model
+import common.api.domain.models.Channel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

@@ -1,6 +1,6 @@
 package core.network.api.data
 
-import common.api.Result
+import common.api.domain.Result
 import core.network.api.data.statuses.NetworkStatus
 import kotlin.reflect.KClass
 import kotlin.reflect.KType

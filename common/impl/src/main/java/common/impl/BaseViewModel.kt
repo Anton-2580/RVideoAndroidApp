@@ -2,8 +2,8 @@ package common.impl
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import common.api.events.BaseEvents
-import common.api.events.Status
+import common.api.domain.events.BaseEvents
+import common.api.domain.events.Status
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch

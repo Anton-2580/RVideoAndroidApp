@@ -1,7 +1,7 @@
 package core.network.impl.models
 
-import common.api.Model
-import common.api.models.ManyItems
+import common.api.domain.Model
+import common.api.domain.models.ManyItems
 import kotlinx.serialization.Serializable
 import javax.annotation.concurrent.Immutable
 

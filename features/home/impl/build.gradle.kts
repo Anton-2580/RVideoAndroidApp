@@ -77,6 +77,7 @@ dependencies {
     implementation(project(":common:impl"))
     implementation(project(":common:ui"))
     implementation(project(":core:navigation:api"))
+    implementation(project(":core:navigation:impl"))
     implementation(project(":core:network:api"))
     implementation(project(":core:network:impl"))
 

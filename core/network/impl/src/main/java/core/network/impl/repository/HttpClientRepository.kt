@@ -1,6 +1,6 @@
 package core.network.impl.repository
 
-import common.api.Result
+import common.api.domain.Result
 import core.network.api.data.statuses.NetworkStatus
 import core.network.impl.data.delete
 import core.network.impl.data.get

@@ -1,7 +1,7 @@
 package core.network.impl.data
 
 import core.network.impl.BuildConfig
-import common.api.Result
+import common.api.domain.Result
 import core.network.api.data.statuses.NetworkStatus
 import io.ktor.client.HttpClient as KtorHttpClient
 import io.ktor.client.call.body

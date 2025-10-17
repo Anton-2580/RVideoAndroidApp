@@ -1,7 +1,7 @@
 package core.network.impl.models
 
-import common.api.Model
-import common.api.models.VideoWithChannel
+import common.api.domain.Model
+import common.api.domain.models.VideoWithChannel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

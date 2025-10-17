@@ -38,6 +38,15 @@
             <option value="$PROJECT_DIR$/features/home" />
             <option value="$PROJECT_DIR$/features/home/api" />
             <option value="$PROJECT_DIR$/features/home/impl" />
+            <option value="$PROJECT_DIR$/features/profile" />
+            <option value="$PROJECT_DIR$/features/profile/api" />
+            <option value="$PROJECT_DIR$/features/profile/impl" />
+            <option value="$PROJECT_DIR$/features/shorts" />
+            <option value="$PROJECT_DIR$/features/shorts/api" />
+            <option value="$PROJECT_DIR$/features/shorts/impl" />
+            <option value="$PROJECT_DIR$/features/subscribes" />
+            <option value="$PROJECT_DIR$/features/subscribes/api" />
+            <option value="$PROJECT_DIR$/features/subscribes/impl" />
           </set>
         </option>
       </GradleProjectSettings>

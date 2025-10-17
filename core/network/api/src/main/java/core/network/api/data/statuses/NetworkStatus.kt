@@ -1,7 +1,7 @@
 package core.network.api.data.statuses
 
-import common.api.ValuesSealed
-import common.api.events.Status
+import common.api.domain.ValuesSealed
+import common.api.domain.events.Status
 
 
 sealed class NetworkStatus(

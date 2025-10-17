@@ -1,7 +1,7 @@
 package features.home.api.domain
 
 import features.home.api.R
-import common.api.ValuesSealed
+import common.api.domain.ValuesSealed
 
 
 sealed class ContentFilter(

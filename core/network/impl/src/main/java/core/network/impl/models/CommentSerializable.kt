@@ -1,7 +1,7 @@
 package core.network.impl.models
 
-import common.api.Model
-import common.api.models.Comment
+import common.api.domain.Model
+import common.api.domain.models.Comment
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

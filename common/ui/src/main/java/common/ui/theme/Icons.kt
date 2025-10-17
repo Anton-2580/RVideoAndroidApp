@@ -33,3 +33,22 @@ val HorizontalDotsMenu: ImageVector
 val DefaultUser: ImageVector
     @Composable
     get() = ImageVector.vectorResource(R.drawable.default_user)
+
+val Home: ImageVector
+    @Composable
+    get() = ImageVector.vectorResource(R.drawable.home)
+
+val Shorts: ImageVector
+    @Composable
+    get() = ImageVector.vectorResource(R.drawable.shorts)
+
+val Subscribes: ImageVector
+    @Composable
+    get() = ImageVector.vectorResource(R.drawable.subscribes)
+val SubscribesCenter: ImageVector
+    @Composable
+    get() = ImageVector.vectorResource(R.drawable.subscribes_center)
+
+val StandardDefaultUser: ImageVector
+    @Composable
+    get() = ImageVector.vectorResource(R.drawable.standard_default_user)

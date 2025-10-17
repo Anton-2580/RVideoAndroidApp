@@ -91,9 +91,15 @@ dependencies {
 
     implementation(project(":features:auth:api"))
     implementation(project(":features:home:api"))
+    implementation(project(":features:shorts:api"))
+    implementation(project(":features:subscribes:api"))
+    implementation(project(":features:profile:api"))
 
     implementation(project(":features:auth:impl"))
     implementation(project(":features:home:impl"))
+    implementation(project(":features:shorts:impl"))
+    implementation(project(":features:subscribes:impl"))
+    implementation(project(":features:profile:impl"))
 
     implementation(libs.compose.navigation)
 

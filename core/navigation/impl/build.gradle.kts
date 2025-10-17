@@ -3,6 +3,9 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -34,12 +37,16 @@ android {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
+    buildFeatures {
+        compose = true
+    }
 }
 
 dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.material3)
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
@@ -53,7 +60,18 @@ dependencies {
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
 
+    debugImplementation(libs.timber)
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(project(":common:api"))
+    implementation(project(":common:ui"))
     implementation(project(":core:navigation:api"))
+    implementation(project(":features:home:api"))
+    implementation(project(":features:shorts:api"))
+    implementation(project(":features:subscribes:api"))
+    implementation(project(":features:profile:api"))
 
     implementation(libs.compose.hilt.navigation)
+    implementation(libs.kotlinx.serialization.json)
 }
