@@ -18,7 +18,9 @@ import common.ui.theme.StandardDefaultUser
 import common.ui.theme.Subscribes
 import core.navigation.api.domain.AppDestinations
 import core.navigation.api.domain.ContentDestinations
+import core.navigation.api.domain.Navigator
 import core.navigation.impl.domain.ContentBottomBarOnActions
+import core.navigation.impl.domain.ContentDestinationsSerializable
 
 
 @Composable
@@ -60,6 +62,23 @@ fun ContentBottomBar(
                 enabled = selectDestination !== ContentDestinations.ProfilePage,
             ) { StandardDefaultUser() }
         }
+    }
+}
+
+fun contentBottomBar(
+    navigator: Navigator,
+    selectDestination: AppDestinations,
+): @Composable () -> Unit {
+    return {
+        ContentBottomBar(
+            selectDestination = selectDestination,
+            contentBottomBarOnActions = ContentBottomBarOnActions(
+                onHomeAction = { navigator.navigate(ContentDestinationsSerializable.HomePage) },
+                onShortsAction = { navigator.navigate(ContentDestinationsSerializable.ShortsPage) },
+                onSubscribeAction = { navigator.navigate(ContentDestinationsSerializable.SubscribesPage) },
+                onProfileAction = { navigator.navigate(ContentDestinationsSerializable.ProfilePage) },
+            ),
+        )
     }
 }
 

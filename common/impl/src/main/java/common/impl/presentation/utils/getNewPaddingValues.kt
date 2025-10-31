@@ -1,4 +1,4 @@
-package common.impl.utils
+package common.impl.presentation.utils
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable

@@ -48,4 +48,7 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.truth)
+
+    debugImplementation(libs.timber)
+    debugImplementation(libs.leakcanary.android)
 }

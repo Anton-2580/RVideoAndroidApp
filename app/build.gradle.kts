@@ -78,8 +78,10 @@ dependencies {
 
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.timber)
+    debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation(project(":common:api"))
     implementation(project(":common:ui"))
     implementation(project(":common:impl"))
 
@@ -88,6 +90,8 @@ dependencies {
     implementation(project(":core:auth:api"))
     implementation(project(":core:database:api"))
     implementation(project(":core:network:api"))
+    implementation(project(":core:player:api"))
+    implementation(project(":core:player:impl"))
 
     implementation(project(":features:auth:api"))
     implementation(project(":features:home:api"))

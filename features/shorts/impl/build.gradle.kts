@@ -68,6 +68,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
 
     debugImplementation(libs.timber)
+    debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
@@ -78,6 +79,8 @@ dependencies {
     implementation(project(":core:navigation:api"))
     implementation(project(":core:navigation:impl"))
     implementation(project(":core:network:api"))
+    implementation(project(":core:player:api"))
+    implementation(project(":core:player:impl"))
 
     implementation(libs.compose.navigation)
     implementation(libs.kotlinx.serialization.json)

@@ -1,9 +1,10 @@
-package common.impl.widgets
+package common.impl.presentation.widgets
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -22,11 +23,13 @@ fun LoadingVideoBlock(
     color: Color = MaterialTheme.colorScheme.surface,
     shimmerColor: Color = MaterialTheme.colorScheme.surface.copy(1f, 0.5f, 0.5f, 0.5f),
 ) {
+    val padding = 4.dp
     BaseVideoBlock(
         videoBlock = {
             Box(
                 modifier = modifier
                     .fillMaxWidth()
+                    .padding(bottom = padding)
                     .clip(RoundedCornerShape(10))
                     .aspectRatio(16 / 9f)
                     .shimmerLoading(color, shimmerColor)
@@ -36,6 +39,7 @@ fun LoadingVideoBlock(
             Box(
                 modifier = modifier
                     .fillMaxWidth()
+                    .padding(vertical = padding)
                     .clip(RoundedCornerShape(20))
                     .aspectRatio(20f)
                     .shimmerLoading(color, shimmerColor)
@@ -45,6 +49,7 @@ fun LoadingVideoBlock(
             Box(
                 modifier = modifier
                     .weight(1f)
+                    .padding(vertical = padding)
                     .clip(CircleShape)
                     .aspectRatio(1f)
                     .shimmerLoading(color, shimmerColor)
@@ -53,6 +58,7 @@ fun LoadingVideoBlock(
         channelTitleBlock = {
             Box(
                 modifier = modifier
+                    .padding(padding)
                     .clip(RoundedCornerShape(30))
                     .height(20.dp)
                     .fillMaxWidth(0.9f)
@@ -62,6 +68,7 @@ fun LoadingVideoBlock(
         infoBlock = {
             Box(
                 modifier = modifier
+                    .padding(top = padding)
                     .clip(RoundedCornerShape(30))
                     .height(20.dp)
                     .fillMaxWidth(0.7f)

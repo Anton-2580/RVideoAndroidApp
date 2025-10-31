@@ -65,6 +65,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
 
     debugImplementation(libs.timber)
+    debugImplementation(libs.leakcanary.android)
 
     implementation(project(":core:network:api"))
     implementation(project(":common:api"))

@@ -48,6 +48,9 @@ dependencies {
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.truth)
 
+    debugImplementation(libs.timber)
+    debugImplementation(libs.leakcanary.android)
+
     implementation(project(":common:api"))
 
     implementation(libs.kotlin.reflect)

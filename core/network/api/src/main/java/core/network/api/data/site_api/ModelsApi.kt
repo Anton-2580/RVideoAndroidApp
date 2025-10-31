@@ -17,8 +17,8 @@ sealed class ModelsApi(
 sealed class ApiResource(private val name: String): ModelsApi("$name/") {
     data class Item(val path: String): ApiResource(path)
 
-    fun id(id: Int) = Item("$name/$id/")
+    fun id(id: Int) = Item("$name/$id")
 }
 sealed class ApiResourceWithSlug(private val name: String): ApiResource(name) {
-    fun slug(slug: String) = Item("$name/$slug/")
+    fun slug(slug: String) = Item("$name/$slug")
 }

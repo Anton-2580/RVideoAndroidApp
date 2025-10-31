@@ -70,6 +70,7 @@ dependencies {
 
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.timber)
+    debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(project(":features:home:api"))
@@ -80,6 +81,8 @@ dependencies {
     implementation(project(":core:navigation:impl"))
     implementation(project(":core:network:api"))
     implementation(project(":core:network:impl"))
+    implementation(project(":core:player:api"))
+    implementation(project(":core:player:impl"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
@@ -93,4 +96,6 @@ dependencies {
     implementation(libs.coil.network.okhttp)
     implementation(libs.androidx.media3.ui)
     implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.exoplayer.dash)
+    implementation(libs.androidx.media3.datasource)
 }

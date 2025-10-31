@@ -9,6 +9,8 @@ sealed class ContentDestinationsSerializable: AppDestinationsSerializable {
     @Serializable
     data object HomePage: ContentDestinationsSerializable()
     @Serializable
+    data class ChannelPage(val id: Int): ContentDestinationsSerializable()
+    @Serializable
     data object ShortsPage: ContentDestinationsSerializable()
     @Serializable
     data object SubscribesPage: ContentDestinationsSerializable()

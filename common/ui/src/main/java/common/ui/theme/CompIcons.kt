@@ -6,6 +6,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 
 
 @Composable
@@ -22,6 +23,33 @@ fun FullLogo(modifier: Modifier = Modifier) {
     Image(
         imageVector = FullLogo,
         contentDescription = "FullLogo",
+        modifier = modifier,
+    )
+}
+
+@Composable
+fun Settings(modifier: Modifier = Modifier) {
+    Icon(
+        imageVector = Settings,
+        contentDescription = "Settings",
+        modifier = modifier,
+    )
+}
+
+@Composable
+fun Arrow(modifier: Modifier = Modifier) {
+    Icon(
+        imageVector = Arrow,
+        contentDescription = "Arrow",
+        modifier = modifier,
+    )
+}
+
+@Composable
+fun Close(modifier: Modifier = Modifier) {
+    Icon(
+        imageVector = Close,
+        contentDescription = "Close",
         modifier = modifier,
     )
 }
@@ -58,6 +86,7 @@ fun DefaultUser(modifier: Modifier = Modifier) {
     Icon(
         imageVector = DefaultUser,
         contentDescription = "User",
+        tint = Color.Unspecified,
         modifier = modifier,
     )
 }

@@ -18,6 +18,18 @@ val LogoName: ImageVector
     @Composable
     get() = ImageVector.vectorResource(R.drawable.logo_name)
 
+val Settings: ImageVector
+    @Composable
+    get() = ImageVector.vectorResource(R.drawable.settings)
+
+val Arrow: ImageVector
+    @Composable
+    get() = ImageVector.vectorResource(R.drawable.arrow)
+
+val Close: ImageVector
+    @Composable
+    get() = ImageVector.vectorResource(R.drawable.close)
+
 val Bell: ImageVector
     @Composable
     get() = ImageVector.vectorResource(R.drawable.bell)

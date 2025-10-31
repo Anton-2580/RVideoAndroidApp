@@ -12,10 +12,10 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.State
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
@@ -42,26 +42,24 @@ internal fun CoolRippleBaseButton(
     boundColor: Color,
     button: @Composable (State<BorderStroke>, Modifier) -> Unit,
 ) {
-    val activeBorderColor = activeBorder?.brush?.toColor() ?: boundColor
-    val activeBorderWidth = activeBorder?.width?.value ?: 1f
-    val inactiveBorderColor = inactiveBorder?.brush?.toColor() ?: boundColor.copy(alpha = 0f)
-    val inactiveBorderWidth = inactiveBorder?.width?.value ?: 0f
-
     val density = LocalDensity.current
     val scope = rememberCoroutineScope()
     val centerOffset = remember { mutableStateOf(Offset(0f, 0f)) }
     val size = remember { mutableStateOf(DpSize(200.dp, 200.dp)) }
     val animationState = remember { Animatable(0f) }
 
+    val activeBorderColor = remember { activeBorder?.brush?.toColor() ?: boundColor }
+    val activeBorderWidth = remember { activeBorder?.width?.value ?: 1f }
+    val inactiveBorderColor = remember { inactiveBorder?.brush?.toColor() ?: boundColor.copy(alpha = 0f) }
+    val inactiveBorderWidth = remember { inactiveBorder?.width?.value ?: 1f }
 
-    val computedBorder = remember {
-        derivedStateOf {
-            BorderStroke(
-                width = lerp(inactiveBorderWidth, activeBorderWidth, animationState.value).dp,
-                color = lerp(inactiveBorderColor, activeBorderColor, animationState.value)
-            )
-        }
-    }
+
+    val computedBorder = rememberUpdatedState(
+        BorderStroke(
+            width = lerp(inactiveBorderWidth, activeBorderWidth, animationState.value).dp,
+            color = lerp(inactiveBorderColor, activeBorderColor, animationState.value)
+        )
+    )
 
     LaunchedEffect(interactionSource) {
         interactionSource.interactions.collect { interaction ->

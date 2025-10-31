@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="quality">Quality</string>
+    <string name="quality_auto">Auto(%1$s)</string>
+    <string name="auto">Auto</string>
+    <string name="playback_speed">Playback speed</string>
+    <string name="subtitles">Subtitles</string>
+    <string name="current_quality">Current quality</string>
+</resources>

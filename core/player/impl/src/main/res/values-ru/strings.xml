@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="quality">Качество</string>
+    <string name="playback_speed">Скорость воспроизведения</string>
+    <string name="quality_auto">Авто(%1$s)</string>
+    <string name="auto">Авто</string>
+    <string name="subtitles">Субтитры</string>
+    <string name="current_quality">Качество этого видео</string>
+</resources>

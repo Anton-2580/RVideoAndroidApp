@@ -48,10 +48,8 @@ dependencies {
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.truth)
 
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    debugImplementation(libs.timber)
+    debugImplementation(libs.leakcanary.android)
 
     implementation(libs.kotlin.reflect)
 }

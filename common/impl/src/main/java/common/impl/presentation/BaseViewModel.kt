@@ -1,4 +1,4 @@
-package common.impl
+package common.impl.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

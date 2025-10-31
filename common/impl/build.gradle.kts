@@ -67,6 +67,7 @@ dependencies {
     debugImplementation(libs.timber)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    debugImplementation(libs.leakcanary.android)
 
     implementation(project(":common:api"))
     implementation(project(":common:ui"))
